@@ -20,6 +20,14 @@ Route::get('/to.book', function(){
     return view('/book');
 });
 
+Route::get('/login', function(){
+    return view('/login');
+});
+
+Route::get('/register', function(){
+    return view('/register');
+});
+
 Route::get('/', [BookController::class , 'ShowBook'])->name('show');
 
 Route::post('/book', [BookController::class, 'store'])->name('store.book');

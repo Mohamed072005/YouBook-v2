@@ -21,7 +21,7 @@
                     <a class="navbar-brand" href="{{Route('show')}}"><h2><span class=" text-primary">You</span><span class="text-secondary">Book</span></h2></a>
                 </div>
                 <div class="col-5 text-end" id="navbarTogglerDemo03">
-                    <a class="btn btn-outline-success" href="logout.php">Log out</a>
+                    <a class="btn btn-outline-success" href="http://localhost/YouBook-v2/public/login/">Login</a>
                 </div>
             </div>
         </nav>
@@ -29,7 +29,7 @@
     <body>
         <div class="container-fluid bg-danget border border-bottom">
             <div class="container d-flex justify-content-evenly pt-2 pb-2">
-                <a href="http://localhost/YouBook-v2/youbook/public/to.book" class="navbar-a-hover navbar-brand">To Create Book</a>
+                <a href="http://localhost/YouBook-v2/public/to.book" class="navbar-a-hover navbar-brand">To Create Book</a>
                 <a href="{{Route('show')}}" class="navbar-a-hover navbar-brand">To Book</a>
                 <a href="" class="navbar-a-hover navbar-brand">To About</a>
             </div>

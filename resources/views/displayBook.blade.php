@@ -12,17 +12,17 @@
                     <h6 class="card-text">{{$bookInfo->author}}</h6>
                     <p class="card-text">{{$bookInfo->description}}.</p>
                     <h6 class="card-text">{{$bookInfo->prix}}$</h6>
-                    <form action="{{Route('delete.book', $bookInfo->id)}}" method="get">
+                    <form action="{{ route('delete.book', $bookInfo->id)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-outline-danger">Delete</button>
                     </form>
-                    <form class="mt-2" action="{{Route('edit.book', $bookInfo->id)}}" method="get">
+                    <form class="mt-2" action="{{ route('edit.book', $bookInfo->id)}}" method="get">
                         @csrf
                         @method('Edit')
                         <button class="btn btn-outline-warning">Update</button>
                     </form>
-                    <form class="mt-2" action="{{Route('show.book.details', $bookInfo->id)}}" method="get">
+                    <form class="mt-2" action="{{ route('show.book.details', $bookInfo->id)}}" method="get">
                         <button class="btn btn-outline-primary">View</button>
                     </form>
                 </div>
