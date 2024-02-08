@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReservationController;
-use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +18,13 @@ use App\Models\Reservation;
 
 Route::get('/to.book', function(){
     return view('/book');
-});
+})->name('to.book');
 
-Route::get('/login', function(){
+Route::get('/to.login', function(){
     return view('/login');
-});
+})->name('to.login');
 
-Route::get('/register', function(){
+Route::get('/to.register', function(){
     return view('/register');
 });
 
@@ -41,3 +41,7 @@ Route::put('/update/{id}', [BookController::class, 'update'])->name('update.book
 Route::get('/details/{id}', [BookController::class, 'bookDetails'])->name('show.book.details');
 
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation');
+
+Route::post('/createUser', [AuthController::class, 'store'])->name('createUser');
+
+Route::post('/userLogin', [AuthController::class, 'login'])->name('userLogin');
