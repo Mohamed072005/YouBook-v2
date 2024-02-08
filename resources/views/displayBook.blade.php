@@ -6,7 +6,7 @@
         @foreach($book as $bookInfo)
         <div class="col-4 mt-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." class="img-fluid" alt="Book Image">
+                <img class="card-img-top" src="{{ $bookInfo->image ? asset('storage/' . $bookInfo->image) : url('img/thumbnail.png') }}" class="img-fluid" alt="Book Image">
                 <div class="card-body">
                     <h5 class="card-title">{{$bookInfo->title}}</h5>
                     <h6 class="card-text">{{$bookInfo->author}}</h6>
