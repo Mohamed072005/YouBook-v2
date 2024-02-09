@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->string('description');
             $table->float('prix');
-            $table->string('image');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

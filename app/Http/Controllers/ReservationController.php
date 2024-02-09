@@ -22,7 +22,7 @@ class ReservationController extends Controller
                     
         if($available){
             Reservation::create([
-                'user_id' => 1,
+                'user_id' => session('user_id'),
                 'book_id' => $request->book_id,
                 'date_start' => $request->date_start,
                 'date_fin' => $request->date_fin

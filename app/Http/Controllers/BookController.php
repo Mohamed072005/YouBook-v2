@@ -16,21 +16,15 @@ class BookController extends Controller
             'title'=>'required',
             'author'=>'required',
             'description'=>'required',
-            // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'price'=>'required'
         ]);
-
-        // if ($request->hasFile('image')) {
-        //     $imagePath = $request->file('image')->store('uploads', 'public');
-        //     $info['image'] = $imagePath;
-        // }
 
         $book =Book::create([
             'title'=> $request->input('title'),
             'author'=> $request->input('author'),
             'description'=> $request->input('description'),
-            // 'image' => $request->input('image'),
             'prix'=> $request->input('price'),
+            'user_id' => session('user_id'),
         ]);
 
         

@@ -30,18 +30,22 @@
                     
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{session('first_name')}}
+                            @if(!session('first_name') == null)
+                                {{session('first_name')}}
+                            @else
+                                acrions
+                            @endif
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="userDropdown">
-                                @if(!session('id') == null)
+                                @if(!session('user_id') == null)
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="http://localhost/YouBook-v2/public/to.login/">Login</a></li>
+                                <li><a class="dropdown-item" href="{{ route('userLogout') }}">Logout</a></li>
                                 @else
-                                <li><a class="dropdown-item" href="">Logout</a></li>
+                                <li><a class="dropdown-item" href="http://localhost/YouBook-v2/public/to.login/">Login</a></li>
                                 @endif
                         </ul>
                     </div>
