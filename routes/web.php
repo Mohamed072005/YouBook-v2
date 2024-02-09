@@ -18,7 +18,7 @@ use App\Http\Controllers\ReservationController;
 
 Route::get('/to.book', function(){
     return view('/book');
-})->name('to.book');
+})->name('to.book')->middleware('auth');
 
 Route::get('/to.login', function(){
     return view('/login');
@@ -45,3 +45,5 @@ Route::post('/reservation', [ReservationController::class, 'store'])->name('rese
 Route::post('/createUser', [AuthController::class, 'store'])->name('createUser');
 
 Route::post('/userLogin', [AuthController::class, 'login'])->name('userLogin');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('userLogout');

@@ -12,6 +12,8 @@
                     <h6 class="card-text">{{$bookInfo->author}}</h6>
                     <p class="card-text">{{$bookInfo->description}}.</p>
                     <h6 class="card-text">{{$bookInfo->prix}}$</h6>
+                    @if(!session('user_role_id') == null)
+                        @if(session('user_role_id') == 1)
                     <form action="{{ route('delete.book', $bookInfo->id)}}" method="post">
                         @csrf
                         @method('DELETE')
@@ -21,6 +23,8 @@
                         @csrf
                         @method('Edit')
                         <button class="btn btn-outline-warning">Update</button>
+                        @endif
+                    @endif
                     </form>
                     <form class="mt-2" action="{{ route('show.book.details', $bookInfo->id)}}" method="get">
                         <button class="btn btn-outline-primary">View</button>
